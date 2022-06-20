@@ -121,12 +121,22 @@ new_exercise(10);
 //Filter the array $areTheseFruits to only contain valid fruits
 //do not change the arrays itself
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
-$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
-$checkListLength = count($areTheseFruits);
-for ($i = 0; $i < $checkListLength; $i++) {
-    if (!in_array($areTheseFruits[$i], $validFruits, true)) {
-        unset($areTheseFruits[$i]);
+// $checkListLength = count($areTheseFruits);
+// for ($i = 0; $i < $checkListLength; $i++) {
+//     if (!in_array($areTheseFruits[$i], $validFruits, true)) {
+//         unset($areTheseFruits[$i]);
+//     }
+// }
+function filterFruits(array $ArrayToFilter)
+{
+    $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+    $arrayToFilterLength = count($ArrayToFilter);
+    for ($i = 0; $i < $arrayToFilterLength; $i++) {
+        if (!in_array($ArrayToFilter[$i], $validFruits, true)) {
+            unset($ArrayToFilter[$i]);
+        }
     }
 }
+filterFruits($areTheseFruits);
 var_dump($areTheseFruits);//do not change this
